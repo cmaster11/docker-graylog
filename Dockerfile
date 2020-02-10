@@ -1,5 +1,5 @@
 # Custom image to install plugins
-FROM graylog/graylog:3.1.2-1
+FROM graylog/graylog:3.2.1-1
 
 ARG PLUGINS_DIR=./plugin
 
