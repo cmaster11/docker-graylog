@@ -3,9 +3,9 @@ set -Eeuxmo pipefail
 DIR="$(dirname "$(command -v greadlink >/dev/null 2>&1 && greadlink -f "$0" || readlink -f "$0")")"
 
 # --- Config
-IMAGE_NAME="graylog"
+IMAGE_NAME="elasticsearch-oss"
 
 # ---
-VERSION=$(git describe --tags 2>/dev/null || echo 'master')
+VERSION=$(cat "$DIR/VERSION")
 
 docker build -t "$IMAGE_NAME:$VERSION" "$DIR"
